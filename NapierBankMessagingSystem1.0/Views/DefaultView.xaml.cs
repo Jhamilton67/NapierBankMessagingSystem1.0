@@ -1,5 +1,4 @@
-﻿using NapierBankMessagingSystem1._0.ViewModels;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,19 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace NapierBankMessagingSystem1._0
+namespace NapierBankMessagingSystem1._0.Views
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for DefaultView.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class DefaultView : UserControl
     {
-        public MainWindow()
+        public DefaultView()
         {
             InitializeComponent();
-
-            DataContext = new MainWindowViewModel();
-            
         }
     }
 }

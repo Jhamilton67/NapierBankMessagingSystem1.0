@@ -14,19 +14,19 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace NapierBankMessagingSystem1._0
+namespace NapierBankMessagingSystem1._0.Views
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for IncidentsReportView.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class IncidentsReportView : UserControl
     {
-        public MainWindow()
+        public IncidentsReportView()
         {
             InitializeComponent();
 
-            DataContext = new MainWindowViewModel();
-            
+            this.DataContext = new IncidentReportViewModel(); 
+
         }
     }
 }

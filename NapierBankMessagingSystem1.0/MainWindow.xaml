@@ -1,12 +1,36 @@
-﻿<Window x:Class="NapierBankMessagingSystem1._0.MainWindow"
+﻿<Window x:Name="NapierBank" x:Class="NapierBankMessagingSystem1._0.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:NapierBankMessagingSystem1._0"
+        xmlns:local="clr-namespace:NapierBankMessagingSystem1._0" 
+        xmlns:viewmodels="clr-namespace:NapierBankMessagingSystem1._0.ViewModels" 
+
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Napier Bank Messaging Filter System" Height="450" Width="700">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="110*"/>
+            <ColumnDefinition Width="450*"/>
+        </Grid.ColumnDefinitions>
         
+        <!--Colum 1-->
+        <DockPanel Grid.Column="0" Margin="5 5" Background="#FFEAB676">
+            <StackPanel>
+                <Button Content="{Binding ViewSMSButton}" Command="{Binding SMSButtonCommand}" Margin="2 2 2 10" Background="#FF1E81B0" FontWeight="Bold" BorderThickness="2" BorderBrush="Black"/>
+                <Button Content="{Binding ViewEmailButton}" Command="{Binding EmailButtonCommand}" Margin="2 2 2 10" Background="#FF1E81B0" FontWeight="Bold" BorderBrush="Black" BorderThickness="2"/>
+                <Button Content="{Binding ViewTwitterButton}" Command="{Binding TwitterButtonCommand}" Margin="2 2 2 10" Background="#FF1E81B0" FontWeight="Bold" BorderBrush="Black" BorderThickness="2"/>
+
+                <Button Margin=" 2 2 2 10" Opacity="0"/>
+                <Button Margin="2 2 2 10 " Opacity="0"/>
+                <Button Content="{Binding IncidentsReportsButton}" Command="{Binding  IncidentReportsButtonCommand}" Margin="2 2 2 10" Background="#FF1E81B0" FontWeight="Bold" BorderBrush="#FF000206" BorderThickness="2"/>
+                <Button Content="{Binding QuarantineListButton}" Command="{Binding QuarantineListButtonCommand}" Margin="2 2 2 10" Background="#FF1E81B0" FontWeight="Bold" BorderThickness="2" BorderBrush="#FF000206"/>
+                <Button Content="{Binding ExitButton}" Command="{Binding ExitButtonCommand}" Margin="2 2 2 10" Background="#FF1E81B0" FontWeight="Bold" BorderBrush="#FF000206" BorderThickness="2"/>
+            </StackPanel>
+        </DockPanel>
+        
+        <!--Colum 2-->
+        <ContentControl Content="{Binding ContentControlBinding}" Grid.Column="2" Margin="5 5" Grid.ColumnSpan="2"/>
+           
     </Grid>
 </Window>

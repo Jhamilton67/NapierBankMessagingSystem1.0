@@ -1,0 +1,25 @@
+﻿<UserControl x:Class="NapierBankMessagingSystem1._0.Views.SMSView"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:NapierBankMessagingSystem1._0.Views" 
+      xmlns:viewmodels="clr-namespace:NapierBankMessagingSystem1._0.ViewModels" 
+      mc:Ignorable="d" 
+      Background="#ff3300"
+      d:DesignHeight="450" d:DesignWidth="500">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="450*"/>
+        </Grid.ColumnDefinitions>
+
+        <!--Colum 1-->
+        <TextBox Text="{Binding MessageBodyTextBox, Mode=OneWay}" HorizontalAlignment="Left" Height="245" Margin="130,97,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="245" BorderThickness="2" BorderBrush="#FF000206"/>
+        <TextBox  Text="{Binding MessageHeaderTextBox, Mode=OneWay}" HorizontalAlignment="Left" Height="23" Margin="130,47,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="245" BorderBrush="#FF000206" BorderThickness="2"/>
+        <Button Content="{Binding ClearDataFromTextBoxesButton}" Command="{Binding ClearDataFromTextBoxesButtonCommand}" HorizontalAlignment="Left" Margin="195,365,0,0" VerticalAlignment="Top" Width="110" BorderThickness="2" BorderBrush="#FF000206"/>
+        <Label Content="Napier Bank" HorizontalAlignment="Center" Margin="180,0,195,0" VerticalAlignment="Top" Width="125" FontSize="20" FontWeight="Bold"/>
+        <Label Content="SMSHeader -" HorizontalAlignment="Left" Margin="45,44,0,0" VerticalAlignment="Top" Width="85" FontWeight="Bold"/>
+        <Label Content="SMSBody -" HorizontalAlignment="Left" Margin="45,97,0,0" VerticalAlignment="Top" Width="85" FontWeight="Bold"/>
+    </Grid>
+</UserControl>

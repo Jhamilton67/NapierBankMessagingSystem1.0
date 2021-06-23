@@ -14,19 +14,18 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace NapierBankMessagingSystem1._0
+namespace NapierBankMessagingSystem1._0.Views
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for EmailView.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class EmailView : UserControl
     {
-        public MainWindow()
+        public EmailView()
         {
             InitializeComponent();
 
-            DataContext = new MainWindowViewModel();
-            
+            this.DataContext = new EmailViewModel();
         }
     }
 }
