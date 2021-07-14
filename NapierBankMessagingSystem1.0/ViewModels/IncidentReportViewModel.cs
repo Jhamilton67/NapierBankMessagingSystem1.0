@@ -49,13 +49,20 @@ namespace NapierBankMessagingSystem1._0.ViewModels
         #region Private Click Helpers
         private void ClearDatafromTextBoxesButtonClick()
         {
-            TextBoxMentions = string.Empty;
-            TextBoxMentions = string.Empty;
+            MessageBoxResult message = MessageBox.Show("Do you want to Clear the data", "Confirmation", MessageBoxButton.YesNo, MessageBoxImage.Question);
 
-            OnChnaged(nameof(TextBoxMentions));
-            OnChnaged(nameof(TextboxSIRList));
+            if (message == MessageBoxResult.Yes)
+            {
+                TextBoxMentions = string.Empty;
+                TextBoxMentions = string.Empty;
 
-            MessageBox.Show("Data Cleared");
+                OnChnaged(nameof(TextBoxMentions));
+                OnChnaged(nameof(TextboxSIRList));
+            }
+            else _ = message == MessageBoxResult.No;
+            {
+
+            };
         }
         #endregion
 

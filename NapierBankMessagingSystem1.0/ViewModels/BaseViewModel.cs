@@ -9,7 +9,7 @@ namespace NapierBankMessagingSystem1._0.ViewModels
 {
     public class BaseViewModel : INotifyPropertyChanged
     {
-        public event PropertyChangedEventHandler PropertyChanged;
+        public event PropertyChangedEventHandler PropertyChanged;  
 
         public void OnChnaged(string name)
         {

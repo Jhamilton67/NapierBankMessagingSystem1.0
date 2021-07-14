@@ -1,2 +1,211 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ClassDiagram /> 
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="NapierBankMessagingSystem1._0.App" Collapsed="true">
+    <Position X="16" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>App.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NapierBankMessagingSystem1._0.MainWindow" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="21.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MainWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="NapierBankMessagingSystem1._0.Commands.RelayCommands" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="17.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAACAAQAAECAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Commands\RelayCommands.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="NapierBankMessagingSystem1._0.Data.Json" Collapsed="true">
+    <Position X="8" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAA=</HashCode>
+      <FileName>Data\Json.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NapierBankMessagingSystem1._0.Data.LoadFromFile" Collapsed="true">
+    <Position X="19.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CCEAAAAAIAAAAAABAAAAAAAAIAgBAAABAAAAAACAAAA=</HashCode>
+      <FileName>Data\LoadFromFile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NapierBankMessagingSystem1._0.Data.SaveToFile" Collapsed="true">
+    <Position X="5.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAEAAAAAAIAAAAAAAAIAAAAAgAAAgAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\SaveToFile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NapierBankMessagingSystem1._0.Models.Abbreviations" Collapsed="true">
+    <Position X="14.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAgCEAAA=</HashCode>
+      <FileName>Models\Abbreviations.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NapierBankMessagingSystem1._0.Models.Email" Collapsed="true">
+    <Position X="11.5" Y="5.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAEAEAIAAAAAAAAAAAIAAAAgAAABIAAA=</HashCode>
+      <FileName>Models\Email.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NapierBankMessagingSystem1._0.Models.MessageTypes" Collapsed="true">
+    <Position X="14.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAACAAQAAAAAABQAAAAAAAAAQEAAAAAAAIAAA=</HashCode>
+      <FileName>Models\MessageTypes.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NapierBankMessagingSystem1._0.Models.Security" Collapsed="true">
+    <Position X="14.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAQAAAAIAAIAAAAAAAAAAAAAAAQgAAAAA=</HashCode>
+      <FileName>Models\Security.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NapierBankMessagingSystem1._0.Models.SMS" Collapsed="true">
+    <Position X="15.75" Y="6" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>BAAAAACAAAIAAAAEAAAAAAEAAAAAAIAAAAgAAABJACA=</HashCode>
+      <FileName>Models\SMS.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NapierBankMessagingSystem1._0.Models.Tweet" Collapsed="true">
+    <Position X="19.5" Y="6" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAEAAAAAABAAIBAAAAEAACIAAA=</HashCode>
+      <FileName>Models\Tweet.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NapierBankMessagingSystem1._0.Properties.Resources" Collapsed="true">
+    <Position X="19.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NapierBankMessagingSystem1._0.Properties.Settings" Collapsed="true">
+    <Position X="16" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.I0" Collapsed="true">
+    <Position X="14.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAAAAAAAAAAAAAAAAAAAAAAAQAAAEAAAAA=</HashCode>
+      <FileName>System\I0.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NapierBankMessagingSystem1._0.ViewModels.BaseViewModel" Collapsed="true">
+    <Position X="6" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAgAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\BaseViewModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="NapierBankMessagingSystem1._0.ViewModels.EmailViewModel" Collapsed="true">
+    <Position X="9.5" Y="4.75" Width="3.75" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAgSIAAACAAAAQAAAAAEAAAAAAAAAAAIAIAAA=</HashCode>
+      <FileName>ViewModels\EmailViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NapierBankMessagingSystem1._0.ViewModels.IncidentReportViewModel" Collapsed="true">
+    <Position X="10.25" Y="7.25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AEAIAAAAAAAAAAAQAAAAEAAAAAAAAAAAAACAAAAAAAo=</HashCode>
+      <FileName>ViewModels\IncidentReportViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NapierBankMessagingSystem1._0.ViewModels.MainWindowViewModel" Collapsed="true">
+    <Position X="0.5" Y="1.75" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>ABAgAAAAgAAgIAFAAAEQAAAAAAQABAACAUAggAAABAQ=</HashCode>
+      <FileName>ViewModels\MainWindowViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NapierBankMessagingSystem1._0.ViewModels.QuarantineListViewModel" Collapsed="true">
+    <Position X="4" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAQAAAAAAAAgAAAAAAQAAAQAAAAABAAAA=</HashCode>
+      <FileName>ViewModels\QuarantineListViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NapierBankMessagingSystem1._0.ViewModels.SMSViewModel" Collapsed="true">
+    <Position X="5" Y="3.5" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABACAAAAABAAAAAQAACAAAAAgEAAAAAAIgAAAg=</HashCode>
+      <FileName>ViewModels\SMSViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NapierBankMessagingSystem1._0.ViewModels.TwitterViewModel" Collapsed="true">
+    <Position X="4.5" Y="4.75" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAABAAgAAAAAAAAAAAAAAQAAABAAAgQAAAAAAIAAgAA=</HashCode>
+      <FileName>ViewModels\TwitterViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NapierBankMessagingSystem1._0.Views.DefaultView" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="17.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\DefaultView.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="NapierBankMessagingSystem1._0.Views.EmailView" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="21.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\EmailView.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="NapierBankMessagingSystem1._0.Views.IncidentsReportView" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="16" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\IncidentsReportView.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="NapierBankMessagingSystem1._0.Views.QuarantineListView" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="16" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\QuarantineListView.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="NapierBankMessagingSystem1._0.Views.SMSView" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="19.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\SMSView.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="NapierBankMessagingSystem1._0.Views.TwitterView" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="14.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\TwitterView.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Interface Name="System.ComponentModel.INotifyPropertyChanged">
+    <Position X="1.25" Y="3.75" Width="2.25" />
+    <TypeIdentifier />
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

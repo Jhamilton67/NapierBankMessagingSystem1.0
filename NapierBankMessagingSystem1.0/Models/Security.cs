@@ -11,8 +11,8 @@ namespace NapierBankMessagingSystem1._0.Models
         public string SignificantIncidentReports { get; set; }
         public string Subject { get; set; }
 
-       // List<Email> Incidents = new List<Email>();
-       
+        // List<Email> Incidents = new List<Email>();
+
         public string SortCode = "99-99-99";
 
         public string NatureOfIncident { get; set; }

@@ -16,5 +16,6 @@ namespace NapierBankMessagingSystem1._0.Models
         public static string Tweets { get; private set; }
         public static string HashTags { get; private set; }
         public static string Sender { get; private set; }
+
     }
 }

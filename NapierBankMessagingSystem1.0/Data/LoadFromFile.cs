@@ -1,17 +1,23 @@
 ﻿using NapierBankMessagingSystem1._0.Models;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Runtime.Serialization.Json;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace NapierBankMessagingSystem1._0.Data
 {
     public class LoadFromFile
-    {
-        private string DataFilePath;
+    {   //This will have to be checked to see if i can use each file for differnt data. 
+        private  string DataFilePathForSMS;
+        private  string DataFilePathForEmail;
+        private  string DataFilePathForTweets;
+
         public string ErrorCode { get; set; }
+
         #region ListData
         public List<SMS> SMSData { get; set; }
         public List<Tweet> TweetData { get; set; }
@@ -20,7 +26,10 @@ namespace NapierBankMessagingSystem1._0.Data
 
         public LoadFromFile()
         {
-            DataFilePath = @"C:\Users\user\Desktop\Year 3 of Uni\Software Development\textwords.csv";
+            DataFilePathForSMS = @"C:\Users\user\Desktop\Year 3 of Uni\Software Development\textwords1.0.txt";
+            DataFilePathForEmail = @"C:\Users\user\Desktop\Year 3 of Uni\Software Development\textwords1.0.txt";
+            DataFilePathForTweets = @"C:\Users\user\Desktop\Year 3 of Uni\Software Development\textwords1.0.txt";
+
 
             ErrorCode = string.Empty;
             SMSData = new List<SMS>();
@@ -28,19 +37,53 @@ namespace NapierBankMessagingSystem1._0.Data
             EmailData = new List<Email>();
         }
 
+        //public bool NewDataSMSFromCSV()
+        //{
+        //    try
+        //    {
+        //        var info = File.ReadAllLines(DataFilePathForSMS, Encoding.Unicode);
+        //        foreach (string value in info)
+        //        {
+        //            var line = value.Split(',');
+        //            SMSData.Add(new SMS()
+        //            {
+        //                Sender = line[0],
+        //                MessageText = line[1]
+
+        //            });
+        //        }
+        //        return true;
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        ErrorCode = ex.ToString();
+        //        return false;
+        //    }
+        //}
+
+
         public bool DataFromCSVSMS()
         {
             try
             {
-                var info = File.ReadAllLines(DataFilePath);
-                foreach(string value in info)
+                //SMS mS = new SMS();
+                //MemoryStream stream = new MemoryStream();
+                //DataContractJsonSerializer serializer = new DataContractJsonSerializer(typeof(SMS));
+                //serializer.WriteObject(stream, mS);
+                var info = File.ReadAllLines(DataFilePathForSMS);
+                foreach (string value in info)
                 {
-                    var line = value.Split(',');
-                    SMSData.Add(new SMS()
+                    string[] vs = value.Split(',');
+                    SMS SmS1Data = new SMS();
+                    SMSData.Add(new SMS());
                     {
-                        Sender = line[0],
-                        MessageText = Convert.ToString(line[1])
-                    });
+                        SmS1Data.Header = vs[0];
+                        SmS1Data.Sender = vs[1];
+                        SmS1Data.MessageText = vs[2];
+
+                    }
+                 
+                    //SMS mS1 = (SMS)serializer.ReadObject(stream);
                 }
                 return true;
             }
@@ -49,22 +92,31 @@ namespace NapierBankMessagingSystem1._0.Data
                 ErrorCode = ex.ToString();
                 return false;
             }
+
+           
         }
 
         public bool DataFromCSVEmail()
         {
             try
             {
-                var info = File.ReadAllLines(DataFilePath);
+                //Email email = new Email();
+                //MemoryStream memory = new MemoryStream();
+                //DataContractJsonSerializer serializer = new DataContractJsonSerializer(typeof(Email));
+                //serializer.WriteObject(memory, email);
+                var info = File.ReadAllLines(DataFilePathForEmail);
                 foreach (string value in info)
                 {
                     var line = value.Split(',');
                     EmailData.Add(new Email()
                     {
-                       Subject = line[0],
-                       Sender = Convert.ToString(line[1]),
-                       MessageText = Convert.ToString(line[2])
+                       Sender = line[1],
+                       MessageText = line[2],
+
+                       SIR = line[3],
+                       SEM = line[4]
                     });
+                //    Email email1 = (Email)serializer.ReadObject(memory);
                 }
                 return true;
             }
@@ -79,7 +131,11 @@ namespace NapierBankMessagingSystem1._0.Data
         {
             try
             {
-                var info = File.ReadAllLines(DataFilePath);
+                //Tweet tweets = new Tweet();
+                //MemoryStream memory = new MemoryStream();
+                //DataContractJsonSerializer serializer = new DataContractJsonSerializer(typeof(Tweet));
+                //serializer.WriteObject(memory, tweets);
+                var info = File.ReadAllLines(DataFilePathForTweets);
                 foreach (string value in info)
                 {
                     var line = value.Split(',');
@@ -87,9 +143,10 @@ namespace NapierBankMessagingSystem1._0.Data
                     {
                         TwitterID = line[0],
                         Hashtag = Convert.ToString(line[1]),
-                        Textspeak = Convert.ToString(line[2]),
-                        Sender = Convert.ToString(line[3])
+                        Textspeak = line[2],
+                        Sender = line[3]
                     });
+                //    Tweet tweet1 = (Tweet)serializer.ReadObject(memory);
                 }
                 return true;
             }
