@@ -3,8 +3,10 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:NapierBankMessagingSystem1._0.Views"
-      Background="#ff3300"
+      xmlns:local="clr-namespace:NapierBankMessagingSystem1._0.Views" 
+      xmlns:viewmodels="clr-namespace:NapierBankMessagingSystem1._0.ViewModels" 
+            d:DataContext="{d:DesignInstance Type=viewmodels:TwitterViewModel}"
+             Background="#ff3300"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="500">
 
@@ -15,18 +17,28 @@
             </Grid.ColumnDefinitions>
 
             <!--Colum 1-->
-            <TextBox Text="{Binding Tweets, Mode=OneWay}" HorizontalAlignment="Left" Height="228" Margin="130,122,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="245" BorderBrush="#FF000104" BorderThickness="2"/>
-            <TextBox  Text="{Binding TwitterSenderTextBox, Mode=OneWay}" HorizontalAlignment="Left" Height="23" Margin="130,66,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="245" BorderBrush="#FF000104" BorderThickness="2"/>
-            <TextBox  Text="{Binding HashTagTextBox, Mode=OneWay}" HorizontalAlignment="Left" Height="23" Margin="130,38,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="245" BorderBrush="#FF000104" BorderThickness="2"/>
-            <TextBox  Text="{Binding TweetBodyTextBox, Mode=OneWay}" HorizontalAlignment="Left" Height="23" Margin="130,94,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="245" BorderBrush="#FF000104" BorderThickness="2"/>
-            <Button Content="{Binding ClearTweetDataFromTextBoxesButton}" Command="{Binding ClearTweetDataFromTextBoxesButtonCommand}" HorizontalAlignment="Left" Margin="195,355,0,0" VerticalAlignment="Top" Width="110" BorderBrush="#FF000104" BorderThickness="2"/>
+            <TextBox x:Name="MessageBoxTweetBody" Text="{Binding TweetBodyTextBox, Mode=OneWay}" HorizontalAlignment="Left" Height="228" Margin="95,122,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="225" BorderBrush="#FF000104" BorderThickness="2"/>
+            <TextBox x:Name="MessageBoxTweetSender" Text="{Binding TwitterSenderTextBox, Mode=OneWay}" HorizontalAlignment="Left" Height="23" Margin="95,66,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="225" BorderBrush="#FF000104" BorderThickness="2"/>
+            <TextBox x:Name="MessageBoxTweetID" Text="{Binding TwitterIDTextBox, Mode=OneWay}" HorizontalAlignment="Left" Height="23" Margin="95,38,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="225" BorderBrush="#FF000104" BorderThickness="2"/>
+            <TextBox x:Name="MessageBoxTweetHashtag" Text="{Binding HashTagTextBox, Mode=OneWay}" HorizontalAlignment="Left" Height="23" Margin="95,94,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="225" BorderBrush="#FF000104" BorderThickness="2"/>
+            <Button Content="{Binding ClearTweetDataFromTextBoxesButton}" Command="{Binding ClearTweetDataFromTextBoxesButtonCommand}" HorizontalAlignment="Left" Margin="160,355,0,0" VerticalAlignment="Top" Width="110" BorderBrush="#FF000104" BorderThickness="2"/>
             <Label Content="Napier Bank" HorizontalAlignment="Center" Margin="180,0,195,0" VerticalAlignment="Top" Width="125" FontSize="20" FontWeight="Bold"/>
-            <!--Section 2-->
-            <Label Content="Twitter ID -" HorizontalAlignment="Left" Margin="35,38,0,0" VerticalAlignment="Top" Width="90" FontWeight="Bold"/>
-            <Label Content="Tweet Body -" HorizontalAlignment="Left" Margin="35,122,0,0" VerticalAlignment="Top" Width="90" FontWeight="Bold"/>
-            <Label Content="Hashtags  -" HorizontalAlignment="Left" Margin="35,91,0,0" VerticalAlignment="Top" Width="90" FontWeight="Bold"/>
-            <Label Content="Sender -" HorizontalAlignment="Left" Margin="35,65,0,0" VerticalAlignment="Top" Width="90" FontWeight="Bold"/>
-            <Button Content="{Binding SaveDataFromtextBoxesButton}" Command="{Binding SaveDataFromtextBoxesButtonCommand}" HorizontalAlignment="Left" Margin="195,379,0,0" VerticalAlignment="Top" Width="110" BorderBrush="#FF000104" BorderThickness="2"/>
+            <!--Colum 2-->
+            <Label Content="Twitter ID -" HorizontalAlignment="Left" Margin="0,38,0,0" VerticalAlignment="Top" Width="90" FontWeight="Bold"/>
+            <Label Content="Tweet Body -" HorizontalAlignment="Left" Margin="0,122,0,0" VerticalAlignment="Top" Width="90" FontWeight="Bold"/>
+            <Label Content="Hashtags  -" HorizontalAlignment="Left" Margin="0,91,0,0" VerticalAlignment="Top" Width="90" FontWeight="Bold"/>
+            <Label Content="Sender -" HorizontalAlignment="Left" Margin="0,65,0,0" VerticalAlignment="Top" Width="90" FontWeight="Bold"/>
+            <Button Content="{Binding SaveDataFromtextBoxesButton}" Command="{Binding SaveDataFromtextBoxesButtonCommand}" HorizontalAlignment="Left" Margin="160,379,0,0" VerticalAlignment="Top" Width="110" BorderBrush="#FF000104" BorderThickness="2"/>
+            <!--Colum 3-->
+
+            <ComboBox Name="TweetComboBoxData" IsEnabled="True" ItemsSource="{Binding Tweets}" SelectionChanged="TweetComboBoxData_SelectionChanged" HorizontalAlignment="Left" Height="23" Margin="325,65,0,0" VerticalAlignment="Top" Width="170" BorderBrush="#FF1B0202" BorderThickness="2">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding  Hashtag}"/>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+            <Label Content="FileData" HorizontalAlignment="Left" Margin="384,38,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
         </Grid>
     </Grid>
 </UserControl>

@@ -30,7 +30,9 @@ namespace NapierBankMessagingSystem1._0.Models
 
         public override string ToString()
         {
-            return base.ToString();
+            string TweetData = $"{TwitterID}, {Hashtag}, {Sender} {Textspeak}:" +
+                 $"{TwitterID[0]}--{Hashtag[1]}--{Textspeak[2]}--{Sender[3]}";
+            return TweetData;
         }
 
         public override int GetHashCode()
@@ -40,7 +42,6 @@ namespace NapierBankMessagingSystem1._0.Models
 
         public string TweetsHashtag
         {
-
             get
             {
                 return this.TweetsHashtag;

@@ -36,7 +36,7 @@ namespace NapierBankMessagingSystem1._0.ViewModels
         public ObservableCollection<SMS> SMSTextSpeak { get; set; }
         
         #endregion
-                            
+         
         #region Constructor
         public SMSViewModel()
         {

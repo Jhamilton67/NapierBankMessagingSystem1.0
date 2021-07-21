@@ -2,6 +2,7 @@
 using NapierBankMessagingSystem1._0.ViewModels;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -31,10 +32,13 @@ namespace NapierBankMessagingSystem1._0.Views
 
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
             SMS smsdata1 = ComBoxData.SelectedItem as SMS;
+            MessageHeaderTxt.Text = smsdata1.PNumberCode;
             MessageSendertxt.Text = smsdata1.Sender;
             MessageBodytxt.Text = smsdata1.MessageText;
+
+            MessageBox.Show(ComBoxData.SelectedItem.ToString());
+            smsdata1.ToString();
         }
     }
 }

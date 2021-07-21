@@ -21,7 +21,6 @@ namespace NapierBankMessagingSystem1._0.Models
         public string MessageText { get; set; }
         [DataMember]
         public string UkNumberCode = "+"; 
-
         #region Regex
         public static string SMSdata { get; private set; }
         #endregion
@@ -30,14 +29,6 @@ namespace NapierBankMessagingSystem1._0.Models
             Header = string.Empty;
             Sender = string.Empty;
             MessageText = string.Empty;
-            //Serializeation
-           // SMS mS = new SMS();
-            //MemoryStream stream = new MemoryStream();
-            //DataContractJsonSerializer serializer = new DataContractJsonSerializer(typeof(SMS));
-            //serializer.WriteObject(stream, mS);
-
-            //Deserialzation
-            //SMS mS1 = (SMS)serializer.ReadObject(stream);
         }
         //Need to test the code 
         public override string ToString()

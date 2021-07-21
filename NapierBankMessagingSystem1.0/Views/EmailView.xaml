@@ -3,8 +3,10 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:NapierBankMessagingSystem1._0.Views"
-      Background="#ff3300"
+      xmlns:local="clr-namespace:NapierBankMessagingSystem1._0.Views" 
+             xmlns:viewmodels="clr-namespace:NapierBankMessagingSystem1._0.ViewModels"
+             d:DataContext="{d:DesignInstance Type=viewmodels:EmailViewModel}"
+             Background="#ff3300"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="500">
 
@@ -15,16 +17,27 @@
             </Grid.ColumnDefinitions>
 
             <!--Colum 1-->
-            <TextBox Text="{Binding Email, Mode=OneWay}" HorizontalAlignment="Left" Height="245" Margin="130,102,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="245" BorderThickness="2" BorderBrush="Black"/>
-            <TextBox Text="{Binding EmailSenderTextBox, Mode=OneWay}" HorizontalAlignment="Left" Height="23" Margin="130,47,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="245" BorderBrush="Black" BorderThickness="2"/>
-            <TextBox Text="{Binding EmailBodyTextBox, Mode=OneWay}" HorizontalAlignment="Left" Height="23" Margin="130,74,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="245" BorderBrush="Black" BorderThickness="2"/>
-            <Button Content="{Binding  SaveEmailDataFromTextBoxesButton}" Command="{Binding SaveEmailDataFromTextBoxesButtonCommand}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="110" Margin="195,375,0,0" BorderThickness="2" BorderBrush="Black"/>
-            <Button Content="{Binding ClearEmailDataFromTextBoxesButton}" Command="{Binding ClearEmailDataFromTextBoxesButtonCommand}" HorizontalAlignment="Left" Margin="195,352,0,0" VerticalAlignment="Top" Width="110" BorderBrush="Black" BorderThickness="2"/>
+            <TextBox x:Name="MessageBoxEmailText" Text="{Binding EmailBodyTextBox, Mode=OneWay}" HorizontalAlignment="Left" Height="245" Margin="90,100,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="230" BorderThickness="2" BorderBrush="Black"/>
+            <TextBox x:Name="MessageBoxEmailSender" Text="{Binding EmailSenderTextBox, Mode=OneWay}" HorizontalAlignment="Left" Height="23" Margin="90,45,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="230" BorderBrush="Black" BorderThickness="2"/>
+            <TextBox x:Name="MessageBoxEmailSubject" Text="{Binding EmailSubjectTextBox, Mode=OneWay}" HorizontalAlignment="Left" Height="23" Margin="90,72,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="230" BorderBrush="Black" BorderThickness="2"/>
+            <Button Content="{Binding  SaveEmailDataFromTextBoxesButton}" Command="{Binding SaveEmailDataFromTextBoxesButtonCommand}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="110" Margin="155,373,0,0" BorderThickness="2" BorderBrush="Black"/>
+            <Button Content="{Binding ClearEmailDataFromTextBoxesButton}" Command="{Binding ClearEmailDataFromTextBoxesButtonCommand}" HorizontalAlignment="Left" Margin="155,350,0,0" VerticalAlignment="Top" Width="110" BorderBrush="Black" BorderThickness="2"/>
             <Label Content="Napier Bank" HorizontalAlignment="Center" Margin="180,0,195,0" VerticalAlignment="Top" Width="125" FontSize="20" FontWeight="Bold"/>
+            
             <!--Section 2-->
-            <Label Content="Email Sender -" HorizontalAlignment="Left" Margin="40,44,0,0" VerticalAlignment="Top" Width="90" FontWeight="Bold"/>
-            <Label Content="Email Body -" HorizontalAlignment="Left" Margin="40,101,0,0" VerticalAlignment="Top" Width="90" FontWeight="Bold"/>
-            <Label Content="Email Subject -" HorizontalAlignment="Left" Margin="40,75,0,0" VerticalAlignment="Top" Width="90" FontWeight="Bold"/>
+            <Label Content="Email Sender -" HorizontalAlignment="Left" Margin="0,42,0,0" VerticalAlignment="Top" Width="90" FontWeight="Bold"/>
+            <Label Content="Email Body -" HorizontalAlignment="Left" Margin="0,99,0,0" VerticalAlignment="Top" Width="90" FontWeight="Bold"/>
+            <Label Content="Email Subject -" HorizontalAlignment="Left" Margin="0,73,0,0" VerticalAlignment="Top" Width="90" FontWeight="Bold"/>
+            
+            <!--Section 3-->
+            <ComboBox x:Name="EmailComBoxData" IsEditable="True" ItemsSource="{Binding Email}" SelectionChanged="EmailComBoxData_SelectionChanged" HorizontalAlignment="Left" Height="23" Margin="325,45,0,0" VerticalAlignment="Top" Width="170" BorderBrush="#FF1B0202" BorderThickness="2">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding Subject}"/>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+            <Label Content="FileData" HorizontalAlignment="Left" Margin="390,19,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
         </Grid>
     </Grid>
 </UserControl>

@@ -1,4 +1,5 @@
-﻿using NapierBankMessagingSystem1._0.ViewModels;
+﻿using NapierBankMessagingSystem1._0.Models;
+using NapierBankMessagingSystem1._0.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,6 +27,18 @@ namespace NapierBankMessagingSystem1._0.Views
             InitializeComponent();
 
             this.DataContext = new EmailViewModel();
+        }
+
+        private void EmailComBoxData_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Email EmailData1 = EmailComBoxData.SelectedItem as Email;
+            MessageBoxEmailSender.Text = EmailData1.EmailSymbol;
+            MessageBoxEmailSubject.Text = EmailData1.Subject;
+            MessageBoxEmailText.Text = EmailData1.MessageText;
+
+            MessageBox.Show(EmailComBoxData.SelectedItem.ToString());
+            EmailData1.ToString();
+
         }
     }
 }

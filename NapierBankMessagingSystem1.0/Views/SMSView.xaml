@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:NapierBankMessagingSystem1._0.Views" 
       xmlns:viewmodels="clr-namespace:NapierBankMessagingSystem1._0.ViewModels" 
              d:DataContext="{d:DesignInstance Type=viewmodels:SMSViewModel}"
-             mc:Ignorable="d" 
+            mc:Ignorable="d"  
       Background="#ff3300"
       d:DesignHeight="450" d:DesignWidth="500">
 
@@ -18,7 +18,7 @@
         <!--Colum 1-->
         <TextBox  x:Name="MessageBodytxt" Text="{Binding MessageBodyTextBox, Mode=OneWay}"  HorizontalAlignment="Left" Height="220" Margin="95,120,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="220" BorderThickness="2" BorderBrush="#FF000206"/>
         <TextBox  x:Name="MessageSendertxt" Text="{Binding MessageSenderTextBox, Mode=OneWay}" HorizontalAlignment="Left" Height="23" Margin="95,92,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="220" BorderBrush="#FF000206" BorderThickness="2"/>
-        <TextBox  Text="{Binding MessageHeaderTextBox, Mode=OneWay}" HorizontalAlignment="Left" Height="23" Margin="95,62,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="220" BorderBrush="#FF000206" BorderThickness="2"/>
+        <TextBox x:Name="MessageHeaderTxt"  Text="{Binding MessageHeaderTextBox, Mode=OneWay}" HorizontalAlignment="Left" Height="23" Margin="95,62,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="220" BorderBrush="#FF000206" BorderThickness="2"/>
         <Button Content="{Binding SaveDataFromtextBoxesButton}" Command="{Binding SaveDataFromtextBoxesButtonCommand}" HorizontalAlignment="Left" Margin="155,370,0,0" VerticalAlignment="Top" Width="110" BorderBrush="Black" BorderThickness="2"/>
         <Button Content="{Binding ClearDataFromTextBoxesButton}" Command="{Binding ClearDataFromTextBoxesButtonCommand}" HorizontalAlignment="Left" Margin="155,345,0,0" VerticalAlignment="Top" Width="110" BorderThickness="2" BorderBrush="#FF000206"/>
         <Label Content="Napier Bank" HorizontalAlignment="Center" Margin="180,0,195,0" VerticalAlignment="Top" Width="125" FontSize="20" FontWeight="Bold"/>
@@ -26,8 +26,15 @@
         <Label Content="SMSBody -" HorizontalAlignment="Left" Margin="10,112,0,0" VerticalAlignment="Top" Width="85" FontWeight="Bold"/>
         <Label Content="SMSSender -" HorizontalAlignment="Left" Margin="10,89,0,0" VerticalAlignment="Top" Width="85" FontWeight="Bold"/>
 
-        <!--Section2-->
-        <ComboBox  x:Name="ComBoxData" IsEnabled="True" ItemsSource="{Binding Path=SMSTextSpeak}" DisplayMemberPath="{Binding BindsDirectlyToSource=True}" SelectionChanged="ComboBox_SelectionChanged" HorizontalAlignment="Left" Height="23" Margin="320,63,0,0" VerticalAlignment="Top" Width="170" BorderBrush="Black" BorderThickness="2"/>
+        <!--Colum2-->
+        <ComboBox  x:Name="ComBoxData" IsEnabled="True" ItemsSource="{Binding SMSTextSpeak}"  SelectionChanged="ComboBox_SelectionChanged" HorizontalAlignment="Left" Height="23" Margin="320,63,0,0" VerticalAlignment="Top" Width="170" BorderBrush="#FF1B0202" BorderThickness="2">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Header}"/>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+        
         <Label Content="FileData" HorizontalAlignment="Left" Margin="377,37,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
 
     </Grid>

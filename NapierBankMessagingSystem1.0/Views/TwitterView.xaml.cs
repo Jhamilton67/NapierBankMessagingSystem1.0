@@ -1,4 +1,5 @@
-﻿using NapierBankMessagingSystem1._0.ViewModels;
+﻿using NapierBankMessagingSystem1._0.Models;
+using NapierBankMessagingSystem1._0.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,6 +27,19 @@ namespace NapierBankMessagingSystem1._0.Views
             InitializeComponent();
 
             this.DataContext = new TwitterViewModel();
+        }
+
+        private void TweetComboBoxData_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Tweet TweetData1 = TweetComboBoxData.SelectedItem as Tweet;
+            MessageBoxTweetBody.Text = TweetData1.Textspeak;
+            MessageBoxTweetID.Text = TweetData1.TwitterID;
+            MessageBoxTweetHashtag.Text = TweetData1.TweetsHashtag;
+            MessageBoxTweetSender.Text = TweetData1.Sender;
+
+            MessageBox.Show(TweetComboBoxData.SelectedItem.ToString());
+            TweetData1.ToString();
+            
         }
     }
 }

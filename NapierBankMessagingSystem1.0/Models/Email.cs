@@ -18,6 +18,9 @@ namespace NapierBankMessagingSystem1._0.Models
         public string MessageText { get; set; }
 
         [DataMember]
+        public string EmailIdentify = "@";
+
+        [DataMember]
         public string SIR { get; set; }
         [DataMember]
         public string SEM { get; set; }
@@ -33,14 +36,37 @@ namespace NapierBankMessagingSystem1._0.Models
 
         public override string ToString()
         {
-            return string.Format("Sender: {1}" + "\n" + "Subject: {2}" + "\n\n" + "MessageText: {3}" + "\n\n", 
-                this.Sender, this.Subject, this.MessageText);
+            string Emaildata = $"{Sender}, {Subject}, {MessageText}:" +
+                $"{Sender[0]}--{Subject[1]}--{MessageText[2]}";
+            return Emaildata; 
         }
 
         public override int GetHashCode()
         {
             return base.GetHashCode();
         }
+
+        public string EmailSymbol
+        { 
+            get
+            {
+                return this.EmailSymbol;
+            }
+            set
+            {
+                if(value.StartsWith(EmailIdentify))
+                {
+                    this.EmailIdentify = value;
+                }
+                else
+                {
+                    throw new ApplicationException("Emails have to have an @ symbol in them");
+                }
+
+            }
+
+        }
+
 
     }
 
