@@ -14,7 +14,6 @@ namespace NapierBankUnitTest
         {
             GetSms.Header = "S123452345";
         }
-    
         [TestMethod]
         [ExpectedException(typeof(ArgumentException))]
         public void TestUKPNumber()

@@ -10,6 +10,7 @@ namespace NapierBankUnitTest
     public class EmailTest
     {
       Email GetEmail = new Email();
+      Security GetSecurity = new Security();
       
       [TestMethod]
       public void TestEmailSender()
@@ -32,6 +33,20 @@ namespace NapierBankUnitTest
       {
             GetEmail.EmailIdentify = "Test@EmailTest.com";
       }
-
+      [TestMethod]
+      public void TestIncidintReports()
+      {
+            GetSecurity.NatureOfIncident = "Cash Loss";
+      }
+      [TestMethod]
+      public void TestSIRList()
+      {
+            GetEmail.SIR = "Theft";
+      }
+      [TestMethod]
+      public void TestSEMList()
+      {
+            GetEmail.SEM = " <Quaratined> arwfsdfsfsfsf";
+      }
     }
 }

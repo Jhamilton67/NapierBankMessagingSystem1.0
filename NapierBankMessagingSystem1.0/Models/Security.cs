@@ -17,7 +17,7 @@ namespace NapierBankMessagingSystem1._0.Models
 
         public string NatureOfIncident { get; set; }
 
-        List<string> Incidents = new List<string>()
+        readonly List<string> Incidents = new List<string>()
         {"<-------------------------->",
             "Theft",
             "Staff Attack",
