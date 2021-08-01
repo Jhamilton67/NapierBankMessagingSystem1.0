@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:NapierBankMessagingSystem1._0" 
         xmlns:viewmodels="clr-namespace:NapierBankMessagingSystem1._0.ViewModels" 
         ResizeMode="NoResize"
+         
         mc:Ignorable="d"
         Title="Napier Bank Messaging Filter System" Height="450" Width="700">
     <Grid>

@@ -35,18 +35,19 @@ namespace NapierBankMessagingSystem1._0.ViewModels
 
         #region Constructor
         public IncidentReportViewModel()
-        {
+        { //The label  button.
             ClearDatafromTextBoxesButton = "Clear Data";
-
+            //Clearing the Textbox to make sure they are always empty when the program loads.
             TextboxSIRList = string.Empty;
             TextBoxMentions = string.Empty;
-    
+             //private click helper linking to Action Method in relayCommands
             ClearDatafromTextBoxesButtonCommand = new RelayCommands(ClearDatafromTextBoxesButtonClick);
            
         }
         #endregion
 
         #region Private Click Helpers
+        //Asks the user if they would like to save the data from what they are viewing.
         private void ClearDatafromTextBoxesButtonClick()
         {
             MessageBoxResult message = MessageBox.Show("Do you want to Clear the data", "Confirmation", MessageBoxButton.YesNo, MessageBoxImage.Question);

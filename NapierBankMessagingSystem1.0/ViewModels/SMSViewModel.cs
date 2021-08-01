@@ -17,12 +17,13 @@ namespace NapierBankMessagingSystem1._0.ViewModels
     {
         private readonly int length;
 
-        // Getters and setters for the Trending list, SIR List and mentions list. 
+        //Getters and setters for the Buttons on the SMS page
         #region TextboxVariables 
         public string MessageBodyTextBox { get; private set; }
         public string MessageSenderTextBox { get; private set; }
         public string MessageHeaderTextBox { get; private set; }
         #endregion
+
         #region ButtonVariable
         public string ClearDataFromTextBoxesButton { get; private set; }
         public string SaveDataFromtextBoxesButton { get; private set; }
@@ -32,14 +33,16 @@ namespace NapierBankMessagingSystem1._0.ViewModels
         public ICommand ClearDataFromTextBoxesButtonCommand { get; private set; }
         public ICommand SaveDataFromtextBoxesButtonCommand { get; private set; }
         #endregion
+
         #region ObservableCollection for SMS
+        //Observable collection which holds all the data from the CSV file 
         public ObservableCollection<SMS> SMSTextSpeak { get; set; }
-        
         #endregion
          
         #region Constructor
         public SMSViewModel()
-        {
+        {//Loads in the data from the CSV file in the load class into the constructor 
+            //so it runs when the page is opended.
             LoadFromFile loaddata = new LoadFromFile();
             if (!loaddata.DataFromCSVSMS())
             {
@@ -51,19 +54,21 @@ namespace NapierBankMessagingSystem1._0.ViewModels
             }
 
             GenerateNumbers();
-
+            //Clearing the Textboxes to make sure they are always empty when the program loads.
             MessageBodyTextBox = string.Empty;
             MessageSenderTextBox = string.Empty;
             MessageHeaderTextBox = string.Empty;
-
+              //The label of each button.
             ClearDataFromTextBoxesButton = "Clear Data";
             SaveDataFromtextBoxesButton = "Save Data";
-
+            //private click helpers linking to Action Method in relayCommands
             ClearDataFromTextBoxesButtonCommand = new RelayCommands(ClearDataFromTextBoxesButtonClick);
             SaveDataFromtextBoxesButtonCommand = new RelayCommands(SaveDataFromtextBoxesButtonClick);
 
         }
-
+        #endregion
+        #region SenderGenerator
+        //Used to Generate the Numbers for the Sender textbox
         public string GenerateNumbers()
         {
             var random = new Random();
@@ -74,6 +79,9 @@ namespace NapierBankMessagingSystem1._0.ViewModels
             }
             return a;
         }
+        #endregion
+
+        #region Private Click Helper  SaveData
 
         private void SaveDataFromtextBoxesButtonClick()
         {
@@ -107,8 +115,9 @@ namespace NapierBankMessagingSystem1._0.ViewModels
             };
         }
         #endregion
-
-        #region Private Click Helper
+      
+        #region Private Click Helper  ClearData
+          //Clears all of the data from the textboxes
         private void ClearDataFromTextBoxesButtonClick()
         {
             MessageBodyTextBox = string.Empty;

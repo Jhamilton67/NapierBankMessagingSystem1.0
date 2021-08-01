@@ -13,7 +13,7 @@ using System.Windows.Input;
 namespace NapierBankMessagingSystem1._0.ViewModels
 {
     public class QuarantineListViewModel : BaseViewModel
-    {
+    {// Getters and setters for the Buttons on the Quaratine Page
         #region Textbox Variables
         public string QDataTextBox { get; private set; }
         #endregion
@@ -24,17 +24,20 @@ namespace NapierBankMessagingSystem1._0.ViewModels
         public ICommand ClearQuarantineDataFromTextBoxesButtonCommand { get; private set; }
         #endregion
         #region ObservableColletion 
+         //Observable collection which holds all the data from the CSV file 
         public ObservableCollection<Email> Incidents { get; set; }
         #endregion
         #region Contructor
         public QuarantineListViewModel()
-        {
+        {//Clearing the Textbox to make sure they are always empty when the program loads.
             QDataTextBox = string.Empty;
-
+             //The label  button.
             ClearQuarantineDataFromTextBoxesButton = "Clear Data";
-
+            //private click helper linking to Action Method in relayCommands
             ClearQuarantineDataFromTextBoxesButtonCommand = new RelayCommands(ClearQuarantineDataFromTextBoxesButtonClick);
 
+              //Loads in the data from the CSV file in the load class into the constructor 
+            //so it runs when the page is opended.
             LoadFromFile load = new LoadFromFile();
             if (!load.DataFromCSVEmail())
             {
@@ -47,6 +50,7 @@ namespace NapierBankMessagingSystem1._0.ViewModels
         }
         #endregion
         #region Private Click Helper
+         //Asks the user if they would like to save the data from what they are viewing.
         private void ClearQuarantineDataFromTextBoxesButtonClick()
         {
             QDataTextBox = string.Empty;

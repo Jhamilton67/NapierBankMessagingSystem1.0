@@ -11,13 +11,12 @@ namespace NapierBankMessagingSystem1._0.Models
         public string SignificantIncidentReports { get; set; }
         public string Subject { get; set; }
 
-        // List<Email> Incidents = new List<Email>();
-
         public string SortCode = "99-99-99";
 
         public string NatureOfIncident { get; set; }
 
-        readonly List<string> Incidents = new List<string>()
+        readonly List<string> Incidents = new List<string>()//List that holds all of the Incidents that
+        //could happen to the bank
         {"<-------------------------->",
             "Theft",
             "Staff Attack",

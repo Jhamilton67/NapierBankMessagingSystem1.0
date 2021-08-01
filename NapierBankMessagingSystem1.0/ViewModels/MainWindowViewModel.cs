@@ -22,6 +22,7 @@ namespace NapierBankMessagingSystem1._0.ViewModels
         public string ExitButton { get; private set; }
         #endregion
         #region Button ICommand's
+        //Icmonnads for all of the buttons
         public ICommand SMSButtonCommand { get; private set; }
         public ICommand EmailButtonCommand { get; private set; }
         public ICommand TwitterButtonCommand { get; private set; }
@@ -43,7 +44,7 @@ namespace NapierBankMessagingSystem1._0.ViewModels
             IncidentsReportsButton = "Incident Reports";
             QuarantineListButton = "Quarantine List";
             ExitButton = "Exit";
-
+            //private click helpers linking to Action Method in relayCommands
             SMSButtonCommand = new RelayCommands(SMSButtonClick);
             EmailButtonCommand = new RelayCommands(EmailButtonClick);
             TwitterButtonCommand = new RelayCommands(TwitterButtonClick);

@@ -11,32 +11,41 @@ using System.Threading.Tasks;
 namespace NapierBankMessagingSystem1._0.Data
 {
     public class LoadFromFile
-    {   
+    {   //Loading data Variables 
         private  string DataFilePathForSMS;
         private  string DataFilePathForEmail;
         private  string DataFilePathForTweets;
 
         public string ErrorCode { get; set; }
-
+        //ListT that are helpinh me to show the data. 
         #region ListData
         public List<SMS> SMSData { get; set; }
         public List<Tweet> TweetData { get; set; }
         public List<Email> EmailData { get; set; }
         #endregion
 
+        #region Constructor 
+        //This constructor is used because it is hold all of the File paths which the data will be loaded from  
+        //and also it is hold my string for my error code because it should always run first to make sure that
+        //The code has no errors in it. 
+        //The files paths are text files. 
         public LoadFromFile()
         {
             DataFilePathForSMS = @"C:\Users\user\Desktop\Year 3 of Uni\Software Development\textwords1.0.txt";
             DataFilePathForEmail = @"C:\Users\user\Desktop\Year 3 of Uni\Software Development\textwords1.0.txt";
             DataFilePathForTweets = @"C:\Users\user\Desktop\Year 3 of Uni\Software Development\textwords1.0.txt";
 
-
             ErrorCode = string.Empty;
-            SMSData = new List<SMS>();
-            TweetData = new List<Tweet>();
-            EmailData = new List<Email>();
+            SMSData = new List<SMS>();//SMS List Data 
+            TweetData = new List<Tweet>();//Twitter List Data
+            EmailData = new List<Email>();//Email List Data 
         }
-
+        #endregion 
+        
+        #region DataForSMS
+        //This try catch helps me to load all of the 250 data entires, this works also with my JSON 
+        //which the client wanted as a requirement. 
+        //The data goes through the foreach and is split up so it can be proccessed and then added into the observable collection.
         public bool DataFromCSVSMS()
         {
             try
@@ -49,7 +58,7 @@ namespace NapierBankMessagingSystem1._0.Data
                 var info = File.ReadAllLines(DataFilePathForSMS);
                 foreach (string value in info)
                 {
-                    string[] vs = value.Split('\n');
+                    string[] vs = value.Split(',');
                     SMS SmS1Data = new SMS();
                     SMSData.Add(new SMS());
                     {
@@ -69,7 +78,10 @@ namespace NapierBankMessagingSystem1._0.Data
             }
 
         }
+        #endregion
 
+        
+        #region DataForEmail
         public bool DataFromCSVEmail()
         {
             try
@@ -98,7 +110,10 @@ namespace NapierBankMessagingSystem1._0.Data
                 return false;
             }
         }
+        #endregion
 
+
+        #region Data For Twitter 
         public bool DataFromCSVTwitter()
         {
             try
@@ -128,5 +143,6 @@ namespace NapierBankMessagingSystem1._0.Data
                 return false;
             }
         }
+        #endregion
     }
 }

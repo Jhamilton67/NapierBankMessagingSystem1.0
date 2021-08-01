@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace NapierBankMessagingSystem1._0.Models
 {
     public class Abbreviations
-    {
+    {//Public Variables
         public string SMSAbrevation { get; set; }
         public string EmailAbrevation{ get; set; }
         public string TweetAbreveation { get; set; }
@@ -36,6 +36,8 @@ namespace NapierBankMessagingSystem1._0.Models
             return a;
         }
 
+
+        #region UnTestedCode
         //Need to test this to see if it will work
         public static string SMSAbreviations(string text, int min, int max )
         {
@@ -54,6 +56,7 @@ namespace NapierBankMessagingSystem1._0.Models
             return @string.ToString().Trim();
            
         }
+        #endregion
         
 
 

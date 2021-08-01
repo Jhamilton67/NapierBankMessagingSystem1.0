@@ -6,10 +6,10 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace NapierBankMessagingSystem1._0.Models
-{   
+{//I used the data contract so it can use the JSON serialzation to run. 
     [DataContract]
     public class Email
-    {
+    {//the data members are for the JSOn to recognise that these variables will hold data. 
         [DataMember]
         public string Sender { get; set; }
         [DataMember]
@@ -25,6 +25,7 @@ namespace NapierBankMessagingSystem1._0.Models
         [DataMember]
         public string SEM { get; set; }
 
+        #region Constructor 
         public Email()
         {
             Sender = string.Empty;
@@ -33,19 +34,29 @@ namespace NapierBankMessagingSystem1._0.Models
             SIR = string.Empty;
             SEM = string.Empty;
         }
+        #endregion
 
+        #region TOstring
+        //This will help the code to out put it all in the userInterface
         public override string ToString()
         {
             string Emaildata = $"{Sender}, {Subject}, {MessageText}:" +
                 $"{Sender[0]}--{Subject[1]}--{MessageText[2]}";
             return Emaildata; 
         }
+        #endregion
 
+         #region HashCode 
+        //This hashes all of the data in the class
         public override int GetHashCode()
         {
             return base.GetHashCode();
         }
+        #endregion
 
+         #region TweetsIdentify
+        //This get set is used to recognise the @ in the Emails.
+        //If the program doesnt recognise it will push an error.
         public string EmailSymbol
         { 
             get
@@ -66,6 +77,7 @@ namespace NapierBankMessagingSystem1._0.Models
             }
 
         }
+        #endregion
 
 
     }

@@ -6,10 +6,11 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace NapierBankMessagingSystem1._0.Models
-{
-    [DataContract]
+{//I used the data contract so it can use the JSON serialzation to run. 
+   [DataContract]
    public  class Tweet
-   {    [DataMember]
+   { //the data members are for the JSOn to recognise that these variables will hold data. 
+        [DataMember]
         public string Sender { get; set; }
         [DataMember]
         public string Textspeak { get; set; }
@@ -20,6 +21,7 @@ namespace NapierBankMessagingSystem1._0.Models
         [IgnoreDataMember]
         public string TweetIDentify  = "#";
 
+        #region Constructor
         public Tweet()
         {
             Sender = string.Empty;
@@ -27,19 +29,29 @@ namespace NapierBankMessagingSystem1._0.Models
             Hashtag = string.Empty;
             TwitterID = string.Empty;
         }
+        #endregion
 
+        #region ToString
+        //This will help the code to out put it all in the userInterface
         public override string ToString()
         {
             string TweetData = $"{TwitterID}, {Hashtag}, {Sender} {Textspeak}:" +
                  $"{TwitterID[0]}--{Hashtag[1]}--{Textspeak[2]}--{Sender[3]}";
             return TweetData;
         }
+        #endregion
 
+        #region HashCode 
+        //This hashes all of the data in the class
         public override int GetHashCode()
         {
             return base.GetHashCode();
         }
-
+        #endregion
+        
+        #region TweetsIdentify
+        //This get set is used to recognise the # in the tweets.
+        //If the program doesnt recognise it will push an error.
         public string TweetsHashtag
         {
             get
@@ -60,5 +72,6 @@ namespace NapierBankMessagingSystem1._0.Models
             }
 
         }
+        #endregion
     }
 }

@@ -10,13 +10,17 @@ using System.Windows;
 namespace NapierBankMessagingSystem1._0.Data
 {
    public  class SaveToFile
-   {
+   { //Saving Data Variables 
         public string SaveDatatoFilePathSMS;
         public string SaveDatatoFilePathEmail;
         public string SaveDatatoFilePathTweets;
 
-        public string ErrorCode { get; set; }
-
+        public string ErrorCode { get; set; }//This string is used to help me with error handling inside the code. 
+        //It is more of a back end function instead of a client function.
+        #region Constructor
+        //This constructor is used because it is hold all of the File paths which the data will be saved too 
+        //and also it is hold my string for my error code because it should always run first to make sure that
+        //The code has no errors in it. 
         public SaveToFile()
         {
             SaveDatatoFilePathSMS = @"C:\Users\user\Desktop\Year 3 of Uni\Software Development\Napier_Bank_Final\SaveDataFolder\NapierBankSaveDataSMS.txt";
@@ -24,7 +28,10 @@ namespace NapierBankMessagingSystem1._0.Data
             SaveDatatoFilePathTweets = @"C:\Users\user\Desktop\Year 3 of Uni\Software Development\Napier_Bank_Final\SaveDataFolder\NapierBankSaveDataTweets.txt)";
             ErrorCode = string.Empty;
         }
+        #endregion
 
+        #region SMSSaveTOFile
+        //This try catch will hold all of the information that will be processed and sent to the files.
         public bool SMSTOFile(SMS mS)
         {
             try
@@ -40,7 +47,10 @@ namespace NapierBankMessagingSystem1._0.Data
                 return false;
             }
         }
+        #endregion
 
+        #region EmailSaveToFile
+        //This try catch will hold all of the information that will be processed and sent to the files.
         public bool EmailTOFile(Email email)
         {
             try
@@ -57,8 +67,11 @@ namespace NapierBankMessagingSystem1._0.Data
             }
 
         }
+        #endregion
 
-        public bool EmailTOFile(Tweet tweet)
+        #region TwitterSaveToFile
+        //This try catch will hold all of the information that will be processed and sent to the files.
+        public bool TwitterTOFile(Tweet tweet)
         {
             try
             {
@@ -73,26 +86,7 @@ namespace NapierBankMessagingSystem1._0.Data
                 return false;
             }
         }
-
-
-        //private static string[] ReadTweetData(string Sender, string TextSpeak, string Hashtag, string TwitterId)
-        //{
-
-        //    string[] DataNotFound = { " Data not Found" };
-
-
-        //    try
-        //    {
-        //        string[] data = System.IO.File.ReadAllLines(@Hashtag);
-        //    }
-        //    catch(Exception ex)
-        //    {
-        //        MessageBox.Show("This is an error ");
-        //        return DataNotFound;
-        //        throw new ApplicationException("This section of code isnt correct", ex);
-        //    }
-        //}
-
+        #endregion
 
    }
 }

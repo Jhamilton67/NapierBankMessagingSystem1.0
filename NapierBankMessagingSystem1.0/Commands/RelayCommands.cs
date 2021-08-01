@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 
 namespace NapierBankMessagingSystem1._0.Commands
-{
-   public  class RelayCommands : ICommand 
-   {
+{//This class is for The ICommand to work everytime there is an action used in the program. 
+    public class RelayCommands : ICommand
+    {
         private Action Action1;
 
         public event EventHandler CanExecuteChanged = (Sender, e) => { };

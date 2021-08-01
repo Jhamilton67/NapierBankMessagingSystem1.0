@@ -9,10 +9,10 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace NapierBankMessagingSystem1._0.Models
-{
+{//I used the data contract so it can use the JSON serialzation to run. 
     [DataContract]
     public class SMS
-    {
+    {//the data members are for the JSOn to recognise that these variables will hold data. 
         [DataMember]
         public string Header { get; set; }
         [DataMember]
@@ -21,28 +21,41 @@ namespace NapierBankMessagingSystem1._0.Models
         public string MessageText { get; set; }
         [DataMember]
         public string UkNumberCode = "+"; 
+
         #region Regex
         public static string SMSdata { get; private set; }
         #endregion
+
+        #region SMSConstructor
         public SMS()
         {
             Header = string.Empty;
             Sender = string.Empty;
             MessageText = string.Empty;
         }
-        //Need to test the code 
+        #endregion
+        
+        #region TOString
+        //This will help the code to out put it all in the userInterface
         public override string ToString()
         {
             string data = $"{Header} {Sender} {MessageText}: " +
                 $"{Header[0]}--{Sender[1]}--{MessageText[2]}";
             return data;
         }
+        #endregion
 
+        #region HashData
+        //This hashes all of the data in the class
         public override int GetHashCode()
         {
             return base.GetHashCode();
         }
+        #endregion
 
+        #region PhoneNumberChecker
+        //This get set is used to recognise the + in the UK phone Numbers.
+        //If the program doesnt recognise it will push an error.
         public string PNumberCode
         {
             
@@ -64,7 +77,8 @@ namespace NapierBankMessagingSystem1._0.Models
             }
 
         }
-
+        #endregion
+        #region CodeForREGEX that isnt used
         //This needs to be Tested to make sure the Code Actually works
         //public static bool GetSMS()
         //{
@@ -88,6 +102,6 @@ namespace NapierBankMessagingSystem1._0.Models
 
         //    return Regex.Replace(input, pattern, "Sms");
         //}
-
+        #endregion
     }
 }

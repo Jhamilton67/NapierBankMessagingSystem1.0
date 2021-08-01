@@ -13,7 +13,7 @@ using System.Windows.Input;
 namespace NapierBankMessagingSystem1._0.ViewModels
 {
     public class EmailViewModel : BaseViewModel
-    {
+    {// Getters and setters for the Buttons on the EmailView Page
         #region TextBox Variables
         public string EmailSubjectTextBox { get; private set; }
         public string EmailSenderTextBox { get; private set; }
@@ -29,22 +29,24 @@ namespace NapierBankMessagingSystem1._0.ViewModels
         public ICommand ClearEmailDataFromTextBoxesButtonCommand { get; private set; }
         public ICommand SaveEmailDataFromTextBoxesButtonCommand { get; private set; }
         #endregion
-
+        //Observable collection which holds all the data from the CSV file 
         public ObservableCollection<Email> Email { get; set; }
 
         #region Constructor
         public EmailViewModel()
-        {
+        {//Clearing the Textboxes to make sure they are always empty when the program loads.
             EmailSubjectTextBox = string.Empty;
             EmailSenderTextBox = string.Empty;
             EmailBodyTextBox = string.Empty;
-
+            //The label of each button.
             ClearEmailDataFromTextBoxesButton = "Clear Data";
             SaveEmailDataFromTextBoxesButton = "Save Data";
-
+            //private click helpers linking to Action Method in relayCommands
             ClearEmailDataFromTextBoxesButtonCommand = new RelayCommands(ClearDataFromTextBoxesButtonClick);
             SaveEmailDataFromTextBoxesButtonCommand = new RelayCommands(SaveEmailDataFromTextBoxesButtonClick);
            
+            //Loads in the data from the CSV file in the load class into the constructor 
+            //so it runs when the page is opended.
             LoadFromFile load = new LoadFromFile();
             if (!load.DataFromCSVEmail())
             {
@@ -55,7 +57,10 @@ namespace NapierBankMessagingSystem1._0.ViewModels
                 Email = new ObservableCollection<Email>(load.EmailData);
             }
         }
+        #endregion
 
+         #region Private Click Helper save Data
+        //Asks the user if they would like to save the data from what they are viewing.
         private void SaveEmailDataFromTextBoxesButtonClick()
         {
 
@@ -63,7 +68,7 @@ namespace NapierBankMessagingSystem1._0.ViewModels
 
             if (message == MessageBoxResult.Yes)
             {
-                System.IO.File.WriteAllText(@"C:\Users\user\Desktop\Year 3 of Uni\Software Development\SaveDataFolder\NapierBankSaveDataEmail", string.Empty);
+                //Add in Code for the Save command.
 
                 EmailSenderTextBox = string.Empty;
                 EmailBodyTextBox = string.Empty;
@@ -82,7 +87,8 @@ namespace NapierBankMessagingSystem1._0.ViewModels
         }
         #endregion
 
-        #region Private Click Helper
+        #region Private Click Helper ClearData
+        //Clears all of the data from the textboxes
         private void ClearDataFromTextBoxesButtonClick()
         {
             EmailSubjectTextBox = string.Empty;
